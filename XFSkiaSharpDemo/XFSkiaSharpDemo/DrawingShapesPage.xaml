@@ -5,6 +5,27 @@
              xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              x:Class="XFSkiaSharpDemo.DrawingShapesPage">
 
-    <forms:SKCanvasView x:Name="SkCanvasView" PaintSurface="SkCanvasView_OnPaintSurface" />
+    <Grid RowSpacing="0">
 
+        <Button Text="Pick a Shape to Draw"
+                x:Name="PickShapeToDrawButton" 
+                Clicked="PickShapeToDrawButton_Clicked"
+                Grid.Row="0"
+                BackgroundColor="DodgerBlue"
+                HorizontalOptions="FillAndExpand"
+                TextColor="White" />
+
+        <Label Text="Drawing Circle" x:Name="DrawingShapeNameLabel"
+               VerticalOptions="CenterAndExpand"
+               HorizontalTextAlignment="Center"
+               VerticalTextAlignment="Center" Grid.Row="1"/>
+
+        <forms:SKCanvasView x:Name="SkCanvasView" PaintSurface="SkCanvasView_OnPaintSurface" Grid.Row="2" />
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40" />
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+    </Grid>
 </ContentPage>
