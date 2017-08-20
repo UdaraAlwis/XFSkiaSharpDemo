@@ -8,4 +8,6 @@ https://www.slideshare.net/fuzSurcd/2d-graphics-rendering-in-xamarinforms-with-s
 
 Blog recap: https://theconfuzedsourcecode.wordpress.com/2017/08/20/so-i-gave-a-tech-talk-on-skiasharp-with-xamarin-forms/
 
-<img src="https://github.com/UdaraAlwis/XFSkiaSharpDemo/screenshots/Screenshot_1503245581.png"  height="380" />
+<br />
+
+<img src="https://github.com/UdaraAlwis/XFSkiaSharpDemo/blob/master/screenshots/Screenshot_1503245581.png"  height="380" />
