@@ -12,9 +12,9 @@ using Xamarin.Forms.Xaml;
 namespace XFSkiaSharpDemo
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class RenderingAnimations : ContentPage
+    public partial class RenderingAnimationsPage : ContentPage
     {
-        public RenderingAnimations()
+        public RenderingAnimationsPage()
         {
             InitializeComponent();
         }

@@ -16,89 +16,24 @@ namespace XFSkiaSharpDemo
             InitializeComponent();
         }
 
-        private void SkCanvasView_OnPaintSurface(object sender, SKPaintSurfaceEventArgs e)
+        private void DrawShapesButton_Clicked(object sender, EventArgs e)
         {
-            // Init skcanvas
-            SKImageInfo skImageInfo = e.Info;
-            SKSurface skSurface = e.Surface;
-            SKCanvas skCanvas = skSurface.Canvas;
+            Navigation.PushAsync(new DrawingShapesPage());
+        }
 
-            skCanvas.Clear(SKColors.White);
+        private void HandlingTouchInteractionsButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HandlingTouchPage());
+        }
 
-            var skCanvasWidth = skImageInfo.Width;
-            var skCanvasheight = skImageInfo.Height;
+        private void HandlingImagesButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new HandlingImagesPage());
+        }
 
-            // move canvas X,Y to center of screen
-            skCanvas.Translate((float)skCanvasWidth / 2, (float)skCanvasheight / 2);
-            // set the pixel scale of the canvas
-            skCanvas.Scale(skCanvasWidth / 200f);
-
-            //// Drawing Stroke
-            //using (SKPaint skPaint = new SKPaint())
-            //{
-            //    skPaint.Style = SKPaintStyle.Stroke;
-            //    skPaint.IsAntialias = true;
-            //    skPaint.Color = SKColors.Red;
-            //    skPaint.StrokeWidth = 10;
-            //    skPaint.StrokeCap = SKStrokeCap.Round;
-
-            //    skCanvas.DrawLine(-50, -50, 50, 50, skPaint);
-            //}
-
-
-            // Drawing a Circle
-            using (SKPaint skPaint = new SKPaint())
-            {
-                skPaint.Style = SKPaintStyle.Fill;
-                skPaint.IsAntialias = true;
-                skPaint.Color = SKColors.Blue;
-                skPaint.StrokeWidth = 10;
-
-                skCanvas.DrawCircle(0, 0, 50, skPaint);
-            }
-
-            // Drawing a Circle Stroke
-            using (SKPaint skPaint = new SKPaint())
-            {
-                skPaint.Style = SKPaintStyle.Stroke;
-                skPaint.IsAntialias = true;
-                skPaint.Color = SKColors.Red;
-                skPaint.StrokeWidth = 10;
-
-                skCanvas.DrawCircle(0, 0, 70, skPaint);
-            }
-
-
-            //// Draw Arc / Ellipse
-            //SKPaint skPaint = new SKPaint()
-            //{
-            //    Style = SKPaintStyle.Stroke,
-            //    Color = SKColors.OrangeRed,
-            //    StrokeWidth = 10,
-            //    IsAntialias = true,
-            //};
-
-            //SKRect skRectangle = new SKRect();
-            //skRectangle.Size = new SKSize(150, 100);
-            //skRectangle.Location = new SKPoint(-150f / 2, -100f / 2);
-
-            //skCanvas.DrawOval(skRectangle, skPaint);
-
-            //// Draw Arc
-            //skPaint.Color = SKColors.BlueViolet;
-            //skRectangle.Size = new SKSize(150, 150);
-            //skRectangle.Location = new SKPoint(-150f / 2, -150f / 2);
-
-            //float startAngle = -90;
-            //float sweepAngle = 230; // (75 / 100) * 360
-
-            //SKPath skPath = new SKPath();
-            //skPath.AddArc(skRectangle, startAngle, sweepAngle);
-
-            //skCanvas.DrawPath(skPath, skPaint);
-
-
-
+        private void RenderingAnimationsButton_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new RenderingAnimationsPage());
         }
     }
 }

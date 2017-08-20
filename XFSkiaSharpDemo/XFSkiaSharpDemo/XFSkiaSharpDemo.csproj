@@ -38,6 +38,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="DrawingShapesPage.xaml.cs">
+      <DependentUpon>DrawingShapesPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="HandlingImagesPage.xaml.cs">
       <DependentUpon>HandlingImagesPage.xaml</DependentUpon>
     </Compile>
@@ -48,8 +51,8 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RenderingAnimations.xaml.cs">
-      <DependentUpon>RenderingAnimations.xaml</DependentUpon>
+    <Compile Include="RenderingAnimationsPage.xaml.cs">
+      <DependentUpon>RenderingAnimationsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -98,7 +101,13 @@
     <EmbeddedResource Include="Resources\xamarinmonkey.png" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="RenderingAnimations.xaml">
+    <EmbeddedResource Include="RenderingAnimationsPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="DrawingShapesPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

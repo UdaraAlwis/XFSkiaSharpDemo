@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
-    x:Class="XFSkiaSharpDemo.RenderingAnimations"
+    x:Class="XFSkiaSharpDemo.RenderingAnimationsPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
+    Title="Rendering Animations"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms">
 
