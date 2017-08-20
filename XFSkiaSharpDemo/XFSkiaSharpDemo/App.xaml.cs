@@ -13,7 +13,7 @@ namespace XFSkiaSharpDemo
         {
             InitializeComponent();
 
-            MainPage = new XFSkiaSharpDemo.HandlingTouchPage();
+            MainPage = new XFSkiaSharpDemo.RenderingAnimations();
         }
 
         protected override void OnStart()

@@ -46,29 +46,29 @@ namespace XFSkiaSharpDemo
             //}
 
 
-            //// Drawing a Circle
-            //using (SKPaint skPaint = new SKPaint())
-            //{
-            //    skPaint.Style = SKPaintStyle.Fill;
-            //    skPaint.IsAntialias = true;
-            //    skPaint.Color = SKColors.Blue;
-            //    skPaint.StrokeWidth = 10;
+            // Drawing a Circle
+            using (SKPaint skPaint = new SKPaint())
+            {
+                skPaint.Style = SKPaintStyle.Fill;
+                skPaint.IsAntialias = true;
+                skPaint.Color = SKColors.Blue;
+                skPaint.StrokeWidth = 10;
 
-            //    skCanvas.DrawCircle(0, 0, 70, skPaint);
-            //}
+                skCanvas.DrawCircle(0, 0, 50, skPaint);
+            }
 
-            //// Drawing a Circle Stroke
-            //using (SKPaint skPaint = new SKPaint())
-            //{
-            //    skPaint.Style = SKPaintStyle.Stroke;
-            //    skPaint.IsAntialias = true;
-            //    skPaint.Color = SKColors.Red;
-            //    skPaint.StrokeWidth = 10;
+            // Drawing a Circle Stroke
+            using (SKPaint skPaint = new SKPaint())
+            {
+                skPaint.Style = SKPaintStyle.Stroke;
+                skPaint.IsAntialias = true;
+                skPaint.Color = SKColors.Red;
+                skPaint.StrokeWidth = 10;
 
-            //    skCanvas.DrawCircle(0, 0, 70, skPaint);
-            //}
+                skCanvas.DrawCircle(0, 0, 70, skPaint);
+            }
 
-            
+
             //// Draw Arc / Ellipse
             //SKPaint skPaint = new SKPaint()
             //{
