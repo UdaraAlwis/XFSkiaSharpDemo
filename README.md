@@ -10,7 +10,7 @@ Blog recap: https://theconfuzedsourcecode.wordpress.com/2017/08/20/so-i-gave-a-t
 
 <br />
 
-<img src="https://github.com/UdaraAlwis/XFSkiaSharpDemo/blob/master/screenshots/Screenshot_1503245581.png"  height="380" /> <img src="https://github.com/UdaraAlwis/XFSkiaSharpDemo/blob/master/screenshots/renderanimationandroid.gif"  height="380" /> <img src="https://github.com/UdaraAlwis/XFSkiaSharpDemo/blob/master/screenshots/touchhandlingandroid.gif"  height="380" /> <img src="https://github.com/UdaraAlwis/XFSkiaSharpDemo/blob/master/screenshots/touchhandlingandroid.gif"  height="380" /> 
+<img src="https://github.com/UdaraAlwis/XFSkiaSharpDemo/blob/master/screenshots/Screenshot_1503245581.png"  height="380" /> <img src="https://github.com/UdaraAlwis/XFSkiaSharpDemo/blob/master/screenshots/renderanimationandroid.gif"  height="380" /> <img src="https://github.com/UdaraAlwis/XFSkiaSharpDemo/blob/master/screenshots/touchhandlingandroid.gif"  height="380" />
 
 <br />
 
