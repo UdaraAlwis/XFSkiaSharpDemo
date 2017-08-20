@@ -21,10 +21,7 @@ namespace XFSkiaSharpDemo
                 "Circle (Unfilled)",
                 "Arc",
                 "Ellipse",
-                "Ellipse",
-                "Ellipse",
-                "Ellipse",
-                "Ellipse",
+                "Text",
             };
 
         string selectedShape;
@@ -74,6 +71,10 @@ namespace XFSkiaSharpDemo
             else if (selectedShape == shapesList[4])
             {
                 Draw_Ellipse(skCanvas);
+            }
+            else if (selectedShape == shapesList[5])
+            {
+                Draw_Text(skCanvas);
             }
         }
 
@@ -172,6 +173,21 @@ namespace XFSkiaSharpDemo
             skPath.AddArc(skRectangle, startAngle, sweepAngle);
 
             skCanvas.DrawPath(skPath, skPaint);
+        }
+
+        private void Draw_Text(SKCanvas skCanvas)
+        {
+            // Drawing Text
+            using (SKPaint skPaint = new SKPaint())
+            {
+                skPaint.Style = SKPaintStyle.Fill;
+                skPaint.IsAntialias = true;
+                skPaint.Color = SKColors.DarkSlateBlue;
+                skPaint.TextAlign = SKTextAlign.Center;
+                skPaint.TextSize = 20;
+
+                skCanvas.DrawText("Hello World!", 0, 0, skPaint);
+            }
         }
     }
 }

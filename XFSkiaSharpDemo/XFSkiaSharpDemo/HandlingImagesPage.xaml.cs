@@ -15,9 +15,20 @@ namespace XFSkiaSharpDemo
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class HandlingImagesPage : ContentPage
     {
+        List<string> imageEffectsList = new List<string>
+            {
+                "Default Image (No Effect)",
+                "Blur Effect",
+            };
+
+        string selectedImageEffect;
+
         public HandlingImagesPage()
         {
             InitializeComponent();
+
+            selectedImageEffect = imageEffectsList[0];
+            EffectNameLabel.Text = $"{selectedImageEffect}";
         }
 
         private void SkCanvasView_OnPaintSurface(object sender, SKPaintSurfaceEventArgs e)
@@ -41,7 +52,6 @@ namespace XFSkiaSharpDemo
             Assembly assembly = GetType().GetTypeInfo().Assembly;
 
             SKBitmap skBitmap;
-
             using (Stream stream 
                     = assembly.GetManifestResourceStream(resourceID))
             using (SKManagedStream skStream
@@ -50,14 +60,43 @@ namespace XFSkiaSharpDemo
                 skBitmap = SKBitmap.Decode(skStream);
             }
 
+            if (selectedImageEffect == imageEffectsList[0])
+            {
+                Draw_ImageDefault(skCanvas, skBitmap);
+            }
+            else if (selectedImageEffect == imageEffectsList[1])
+            {
+                Draw_ImageBlur(skCanvas, skBitmap);
+            }
+        }
+
+        private void Draw_ImageBlur(SKCanvas skCanvas, SKBitmap skBitmap)
+        {
             // Image Filter
             var filter = SKImageFilter.CreateBlur(5, 5);
             var skPaint = new SKPaint();
             skPaint.ImageFilter = filter;
 
-            skCanvas.DrawBitmap(skBitmap, 
+            skCanvas.DrawBitmap(skBitmap,
                 SKRect.Create(-50, -50, 100, 100), skPaint);
-            
+        }
+
+        private void Draw_ImageDefault(SKCanvas skCanvas, SKBitmap skBitmap)
+        {
+            skCanvas.DrawBitmap(skBitmap,
+                SKRect.Create(-50, -50, 100, 100), null);
+        }
+
+        private async void PickImageEffectButton_Clicked(object sender, EventArgs e)
+        {
+            var selection = await DisplayActionSheet("Pick an Image Effect", null, "Cancel", imageEffectsList.ToArray());
+
+            if (selection != null && selection != "Cancel")
+            {
+                selectedImageEffect = selection;
+                EffectNameLabel.Text = $"{selectedImageEffect}";
+                SkCanvasView.InvalidateSurface();
+            }
         }
     }
 }

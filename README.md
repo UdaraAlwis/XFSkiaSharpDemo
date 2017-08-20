@@ -5,3 +5,7 @@ So here I'm demonstrating about SkiaSharp basics, 2D Graphics programming with S
 
 Presentation Slideshow:
 https://www.slideshare.net/fuzSurcd/2d-graphics-rendering-in-xamarinforms-with-skiasharp
+
+Blog recap: https://theconfuzedsourcecode.wordpress.com/2017/08/20/so-i-gave-a-tech-talk-on-skiasharp-with-xamarin-forms/
+
+<img src="https://github.com/UdaraAlwis/XFSkiaSharpDemo/screenshots/Screenshot_1503245581.png"  height="380" />
