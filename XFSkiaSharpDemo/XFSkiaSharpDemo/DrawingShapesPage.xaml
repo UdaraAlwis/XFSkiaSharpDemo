@@ -1,30 +1,39 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             Title="Drawing Shapes"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="XFSkiaSharpDemo.DrawingShapesPage">
+<ContentPage
+    x:Class="XFSkiaSharpDemo.DrawingShapesPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    Title="Drawing Shapes">
 
-    <Grid RowSpacing="0">
+    <Grid Padding="5" RowSpacing="5">
 
-        <Button Text="Pick a Shape to Draw"
-                x:Name="PickShapeToDrawButton" 
-                Clicked="PickShapeToDrawButton_Clicked"
-                Grid.Row="0"
-                BackgroundColor="DodgerBlue"
-                HorizontalOptions="FillAndExpand"
-                TextColor="White" />
+        <Button
+            x:Name="PickShapeToDrawButton"
+            Grid.Row="0"
+            BackgroundColor="DodgerBlue"
+            Clicked="PickShapeToDrawButton_Clicked"
+            HorizontalOptions="FillAndExpand"
+            Text="Pick a Shape to Draw"
+            TextColor="White" />
 
-        <Label Text="Drawing Circle" x:Name="DrawingShapeNameLabel"
-               VerticalOptions="CenterAndExpand"
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center" Grid.Row="1"/>
+        <Label
+            x:Name="DrawingShapeNameLabel"
+            Grid.Row="1"
+            FontSize="Small"
+            HorizontalTextAlignment="Center"
+            Text="Drawing Circle"
+            VerticalOptions="CenterAndExpand"
+            VerticalTextAlignment="Center" />
 
-        <forms:SKCanvasView x:Name="SkCanvasView" PaintSurface="SkCanvasView_OnPaintSurface" Grid.Row="2" />
+        <forms:SKCanvasView
+            x:Name="SkCanvasView"
+            Grid.Row="2"
+            PaintSurface="SkCanvasView_OnPaintSurface" />
 
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
-            <RowDefinition Height="20" />
+            <RowDefinition Height="25" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
     </Grid>

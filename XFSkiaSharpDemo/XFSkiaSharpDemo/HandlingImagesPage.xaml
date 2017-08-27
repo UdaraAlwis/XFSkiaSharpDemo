@@ -1,27 +1,34 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage
     x:Class="XFSkiaSharpDemo.HandlingImagesPage"
-    Title="Handling Images"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms">
+    xmlns:forms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    Title="Handling Images">
 
     <Grid RowSpacing="0">
 
-        <Button Text="Pick an Image Effect"
-                x:Name="PickImageEffectButton" 
-                Clicked="PickImageEffectButton_Clicked"
-                Grid.Row="0"
-                BackgroundColor="DodgerBlue"
-                HorizontalOptions="FillAndExpand"
-                TextColor="White" />
+        <Button
+            x:Name="PickImageEffectButton"
+            Grid.Row="0"
+            BackgroundColor="DodgerBlue"
+            Clicked="PickImageEffectButton_Clicked"
+            HorizontalOptions="FillAndExpand"
+            Text="Pick an Image Effect"
+            TextColor="White" />
 
-        <Label Text="Default Image (No effect)" x:Name="EffectNameLabel"
-               VerticalOptions="CenterAndExpand"
-               HorizontalTextAlignment="Center"
-               VerticalTextAlignment="Center" Grid.Row="1"/>
+        <Label
+            x:Name="EffectNameLabel"
+            Grid.Row="1"
+            HorizontalTextAlignment="Center"
+            Text="Default Image (No effect)"
+            VerticalOptions="CenterAndExpand"
+            VerticalTextAlignment="Center" />
 
-        <forms:SKCanvasView x:Name="SkCanvasView" PaintSurface="SkCanvasView_OnPaintSurface" Grid.Row="2" />
+        <forms:SKCanvasView
+            x:Name="SkCanvasView"
+            Grid.Row="2"
+            PaintSurface="SkCanvasView_OnPaintSurface" />
 
         <Grid.RowDefinitions>
             <RowDefinition Height="40" />
@@ -29,5 +36,5 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
     </Grid>
-    
+
 </ContentPage>

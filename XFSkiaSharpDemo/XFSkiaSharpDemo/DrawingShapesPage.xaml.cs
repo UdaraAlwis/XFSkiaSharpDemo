@@ -22,6 +22,9 @@ namespace XFSkiaSharpDemo
                 "Arc",
                 "Ellipse",
                 "Text",
+                "Rectangle",
+                "Triangle",
+                "Random",
             };
 
         string selectedShape;
@@ -75,6 +78,18 @@ namespace XFSkiaSharpDemo
             else if (selectedShape == shapesList[5])
             {
                 Draw_Text(skCanvas);
+            }
+            else if (selectedShape == shapesList[6])
+            {
+                Draw_Rectangle(skCanvas);
+            }
+            else if (selectedShape == shapesList[7])
+            {
+                Draw_Triangle(skCanvas);
+            }
+            else if (selectedShape == shapesList[8])
+            {
+                Draw_RandomShape(skCanvas);
             }
         }
 
@@ -188,6 +203,81 @@ namespace XFSkiaSharpDemo
 
                 skCanvas.DrawText("Hello World!", 0, 0, skPaint);
             }
+        }
+
+        private void Draw_Rectangle(SKCanvas skCanvas)
+        {
+            // Draw Rectangle
+            SKPaint skPaint = new SKPaint()
+            {
+                Style = SKPaintStyle.Stroke,
+                Color = SKColors.DeepPink,
+                StrokeWidth = 10,
+                IsAntialias = true,
+            };
+
+            SKRect skRectangle = new SKRect();
+            skRectangle.Size = new SKSize(100, 100);
+            skRectangle.Location = new SKPoint(-100f / 2, -100f / 2);
+
+            skCanvas.DrawRect(skRectangle, skPaint);
+        }
+
+        private void Draw_Triangle(SKCanvas skCanvas)
+        {
+            // Draw Rectangle
+            SKPaint skPaint = new SKPaint()
+            {
+                Style = SKPaintStyle.Stroke,
+                Color = SKColors.DeepSkyBlue,
+                StrokeWidth = 10,
+                IsAntialias = true,
+                StrokeCap = SKStrokeCap.Round
+            };
+
+            SKPoint[] skPointsList = new SKPoint[]
+            {
+                // Path 1
+                new SKPoint(+50,0),
+                new SKPoint(0,-70),
+
+                // path 2
+                new SKPoint(0,-70),
+                new SKPoint(-50,0),
+
+                // path 3
+                new SKPoint(-50,0),
+                new SKPoint(+50,0),
+            };
+
+            skCanvas.DrawPoints(SKPointMode.Lines, skPointsList, skPaint);
+        }
+
+        private void Draw_RandomShape(SKCanvas skCanvas)
+        {
+            // Draw any kind of Shape
+            SKPaint strokePaint = new SKPaint
+            {
+                Style = SKPaintStyle.Stroke,
+                Color = SKColors.Black,
+                StrokeWidth = 10,
+                IsAntialias = true,
+            };
+
+            // Create the path
+            SKPath path = new SKPath();
+
+            // Define the drawing path points
+            path.MoveTo(+50, 0); // start point
+            path.LineTo(+50, -50); // first move to this point
+            path.LineTo(-30, -80); // move to this point
+            path.LineTo(-70, 0); // then move to this point
+            path.LineTo(-10, +90); // then move to this point
+            path.LineTo(+50, 0); // end point
+
+            path.Close(); // make sure path is closed
+            // Fill and stroke the path
+            skCanvas.DrawPath(path, strokePaint);
         }
     }
 }
